@@ -1,7 +1,6 @@
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
-
 import classes from "./headerComponent.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Anchor,
   Burger,
@@ -13,6 +12,7 @@ import {
   Image,
   Stack,
 } from "@mantine/core";
+import LoginComponent from "../LoginComponent"; // Importa o LoginComponent
 
 const mainLinks = [
   { link: "#hero", label: "Início" },
@@ -26,6 +26,9 @@ const HeaderComponent = () => {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(0);
   const isMobile = useMediaQuery("(max-width: 767px)");
+
+  // Referência para o LoginComponent
+  const loginComponentRef = useRef(null);
 
   const smoothScrollTo = (target) => {
     const targetElement = document.querySelector(target);
@@ -109,10 +112,21 @@ const HeaderComponent = () => {
               {mainItems}
             </Group>
             <Group gap={10} justify="flex-end" visibleFrom="sm">
-              <Button variant="outline" color="rgb(255, 255, 255)">
+              {/* Botão "Entrar" */}
+              <Button
+                variant="outline"
+                color="rgb(255, 255, 255)"
+                onClick={() => loginComponentRef.current.openModal("login")}
+              >
                 Entrar
               </Button>
-              <Button variant="white" color="rgba(0, 171, 157, 1)">
+
+              {/* Botão "Criar Conta" */}
+              <Button
+                variant="white"
+                color="rgb(0, 56, 124)"
+                onClick={() => loginComponentRef.current.openModal("register")}
+              >
                 Criar Conta
               </Button>
             </Group>
@@ -136,7 +150,7 @@ const HeaderComponent = () => {
         styles={{
           body: {
             height: "100%",
-            backgroundColor: "#006eff",
+            backgroundColor: "rgba(0, 171, 157, 1)",
             padding: 0,
             margin: 0,
           },
@@ -152,6 +166,9 @@ const HeaderComponent = () => {
           </Button>
         </Stack>
       </Drawer>
+
+      {/* LoginComponent agora controla seu próprio modal */}
+      <LoginComponent ref={loginComponentRef} />
     </>
   );
 };

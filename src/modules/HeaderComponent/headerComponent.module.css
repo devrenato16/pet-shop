@@ -27,7 +27,7 @@
     color: rgb(255, 255, 255);
     padding: 15px var(--mantine-spacing-sm);
     font-weight: 700;
-    border-bottom: 2px solid transparent;
+    border-bottom: 3px solid transparent;
     transition:
       border-color 100ms ease,
       color 100ms ease;
@@ -43,9 +43,6 @@
     }
   }
 
-  .burger {
-    
-  }
 
   .drawer {
     color: #7cf000;
