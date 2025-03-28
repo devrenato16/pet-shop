@@ -1,9 +1,11 @@
-import { Text } from "@mantine/core";
+import HeroComponent from "../../modules/HeroComponent";
+
+import "./homePage.module.css";
 
 const Home = () => {
   return (
     <>
-      <Text>Olá mundo</Text>
+      <HeroComponent />
     </>
   );
 };
