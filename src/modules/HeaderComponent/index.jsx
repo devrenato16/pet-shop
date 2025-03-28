@@ -109,8 +109,10 @@ const HeaderComponent = () => {
               {mainItems}
             </Group>
             <Group gap={10} justify="flex-end" visibleFrom="sm">
-              <Button variant="filled">Entrar</Button>
-              <Button variant="white" color="rgb(0, 56, 124)">
+              <Button variant="outline" color="rgb(255, 255, 255)">
+                Entrar
+              </Button>
+              <Button variant="white" color="rgba(0, 171, 157, 1)">
                 Criar Conta
               </Button>
             </Group>
@@ -145,7 +147,7 @@ const HeaderComponent = () => {
           {mainItems}
 
           <Button variant="filled">Entrar</Button>
-          <Button variant="white" color="rgb(0, 56, 124)">
+          <Button variant="white" color="rgba(0, 171, 157, 1)">
             Criar Conta
           </Button>
         </Stack>

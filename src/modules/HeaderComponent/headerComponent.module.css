@@ -1,6 +1,6 @@
 .header {
     height: 70px;
-    background-image: linear-gradient(to right, #0084ff, #006eff);
+    background-image: linear-gradient(to right, rgba(0, 171, 157, 1), rgba(0, 171, 157, 1));
     
     position: fixed;  
     top: 0;  
