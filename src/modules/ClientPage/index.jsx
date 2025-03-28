@@ -16,7 +16,7 @@ function ClientPage() {
   return (
     <Container className={classes.container} size="xl">
       <Title order={2} align="center" mb="xl">
-        Bem-vindo ao PetShop Neno
+        Bem-vindo ao PetShop
       </Title>
       <ServiceList services={services} />
       <Divider my="xl" />
